@@ -1,0 +1,4 @@
+enum DatabaseProjectionRule {
+  include,
+  firstElement,
+}
