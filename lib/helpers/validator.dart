@@ -21,13 +21,13 @@ class Validator<T> {
 
   static Validator<T> required<T>([String? errorMessage]) => Validator._((value) {
         const defaultError = 'This field is required.';
-        if (T is String) {
+        if (T == String) {
           return value != null && (value as String).isNotEmpty ? null : errorMessage ?? defaultError;
         }
-        if (T is List) {
+        if ('$T'.startsWith('List')) {
           return value != null && (value as List).isNotEmpty ? null : errorMessage ?? defaultError;
         }
-        if (T is Map) {
+        if ('$T'.startsWith('Map')) {
           return value != null && (value as Map).isNotEmpty ? null : errorMessage ?? defaultError;
         }
         return value != null ? null : errorMessage ?? defaultError;
