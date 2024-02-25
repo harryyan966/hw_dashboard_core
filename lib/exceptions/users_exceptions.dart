@@ -1,4 +1,4 @@
-import 'package:hw_dashboard_core/helpers/app_exception.dart';
+import 'package:hw_dashboard_core/exceptions/app_exception.dart';
 
 class UsersException  extends AppException {
   UsersException._(super.message);

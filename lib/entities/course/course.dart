@@ -1,4 +1,5 @@
 import 'package:hw_dashboard_core/entities/course/semester.dart';
+import 'package:hw_dashboard_core/entities/scores/assignment.dart';
 import 'package:hw_dashboard_core/services/id_generator/id.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:syntax_sugar/syntax_sugar.dart';
@@ -15,6 +16,7 @@ class Course {
     required this.semester,
     required this.teacher,
     required this.students,
+    required this.assignments,
   });
 
   factory Course.fromJson(Json json) => _$CourseFromJson(json);
@@ -27,6 +29,7 @@ class Course {
   final int year;
   final Semester semester;
   final List<Id> students;
+  final List<Assignment> assignments;
 
   Course copyWith({
     Id? id,
@@ -36,6 +39,7 @@ class Course {
     int? year,
     Semester? semester,
     List<Id>? students,
+    List<Assignment>? assignments,
   }) {
     return Course(
       id: id ?? this.id,
@@ -45,6 +49,7 @@ class Course {
       semester: semester ?? this.semester,
       teacher: teacher ?? this.teacher,
       students: students ?? this.students,
+      assignments: assignments ?? this.assignments,
     );
   }
 }

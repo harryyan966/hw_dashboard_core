@@ -10,13 +10,18 @@ abstract class ICoursesHandler {
     required Semester semester,
     required List<Id> students,
   });
-  Future<CourseInfo> deleteCourse({
+
+  Future<void> deleteCourse({
     required Id id,
   });
 
   Future<void> updateCourseInfo({
     required Id id,
-    required CourseInfo name,
+    String? name,
+    UserInfo? teacher,
+    int? grade,
+    int? year,
+    Semester? semester,
   });
 
   Future<void> addStudentToCourse({

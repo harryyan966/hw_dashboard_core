@@ -16,6 +16,9 @@ Course _$CourseFromJson(Map<String, dynamic> json) => Course(
       students: (json['students'] as List<dynamic>)
           .map((e) => Id.fromJson(e as String))
           .toList(),
+      assignments: (json['assignments'] as List<dynamic>)
+          .map((e) => Assignment.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
@@ -26,6 +29,7 @@ Map<String, dynamic> _$CourseToJson(Course instance) => <String, dynamic>{
       'year': instance.year,
       'semester': _$SemesterEnumMap[instance.semester]!,
       'students': instance.students.map((e) => e.toJson()).toList(),
+      'assignments': instance.assignments.map((e) => e.toJson()).toList(),
     };
 
 const _$SemesterEnumMap = {

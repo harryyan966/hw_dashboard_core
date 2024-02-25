@@ -32,7 +32,7 @@ export 'handlers/users_handler.dart';
 
 // helpers
 
-export 'helpers/app_exception.dart';
+export 'exceptions/app_exception.dart';
 export 'helpers/validator.dart';
 
 // models
